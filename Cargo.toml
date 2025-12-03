@@ -1,0 +1,19 @@
+[package]
+name = "alg_ds"
+version = "0.3.1"
+authors = ["dvshapkin <dvshapkin@mail.ru>"]
+edition = "2018"
+
+description = "Algorithms & data structures"
+
+readme = "README.md"
+
+documentation = "https://docs.rs/alg-ds"
+homepage = "https://gitlab.com/dvshapkin/alg-ds"
+repository = "https://gitlab.com/dvshapkin/alg-ds"
+
+keywords = ["algorithm", "data-structure"]
+
+license = "MIT"
+
+[dependencies]
