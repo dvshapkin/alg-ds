@@ -1,6 +1,6 @@
 use std::ops::{Index, IndexMut};
 use std::slice::{Iter, IterMut};
-use std::{alloc, fmt, mem, ops};
+use std::{alloc, fmt, mem, ops, ptr};
 
 /// Rectangular table of elements (two-dimensional array).
 ///
@@ -106,8 +106,12 @@ where
     /// Fills data buffer with a `value`.
     ///
     fn fill_with(buf: &mut [T], value: T) {
-        for e in buf {
-            *e = value.clone();
+        let mut ptr = buf.as_mut_ptr();
+        for _ in 0..buf.len() {
+            unsafe {
+                ptr::write(ptr, value.clone());
+                ptr = ptr.offset(1);
+            }
         }
     }
 
