@@ -141,7 +141,7 @@ where
     }
 }
 
-fn layout<T>(size: usize) -> Result<alloc::Layout, alloc::LayoutErr> {
+fn layout<T>(size: usize) -> Result<alloc::Layout, alloc::LayoutError> {
     alloc::Layout::from_size_align(size * mem::size_of::<T>(), mem::align_of::<T>())
 }
 
